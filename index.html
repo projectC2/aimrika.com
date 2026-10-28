@@ -190,9 +190,9 @@
       platform, generalising to ground and maritime robots as the roadmap extends.</p>
     </div>
     <div class="stats reveal">
-      <div class="stat"><div class="n">~110,000</div><div class="l">labelled images across 23 model families</div></div>
-      <div class="stat"><div class="n">~95%</div><div class="l">detection accuracy achieved</div></div>
-      <div class="stat"><div class="n">Closed-loop</div><div class="l">object-detection-and-localization pipeline on embedded hardware</div></div>
+      <div class="stat"><div class="n">24</div><div class="l">trained AI models across 9 architecture variants</div></div>
+      <div class="stat"><div class="n">0.933 mAP50</div><div class="l">production maritime vessel detection at 64 FPS on edge hardware</div></div>
+      <div class="stat"><div class="n">Closed-loop</div><div class="l">real-time detection-and-localization on embedded hardware, hardware-in-the-loop against live simulation</div></div>
       <div class="stat"><div class="n">GPS-denied</div><div class="l">visual place recognition for navigation without satellite positioning</div></div>
     </div>
     <div class="table-card reveal" style="margin-top:32px">
@@ -232,7 +232,7 @@
     <div class="three">
       <div class="tc reveal"><div class="tag">Computer 01</div><h3>Train</h3><p>The AI is trained on commodity GPUs — the AI factory that turns data and experience into capability.</p></div>
       <div class="tc flag reveal"><div class="tag">Computer 02 · flagship</div><h3>Simulate — Etalonis</h3><p>The world model and sandbox where the agent lives thousands of lifetimes across digital twins. It is where the agent can be built and validated at a scale and speed the real world can't match — and we add what general world models lack: a validation authority.</p><span class="pill">This is what we build</span></div>
-      <div class="tc reveal"><div class="tag">Computer 03</div><h3>Infer at the edge</h3><p>The validated agent runs on an edge module aboard the real machine — perception to decision to action in real time, on-device, with no cloud and no operator.</p></div>
+      <div class="tc reveal"><div class="tag">Computer 03</div><h3>Infer at the edge</h3><p>The validated agent runs on an edge module aboard the real machine — perception to decision to action in real time, on-device, with no cloud and no operator. One pipeline (PyTorch → ONNX → TensorRT FP16) takes a model from training to deployment, benchmarked across edge hardware from 13 to 100 TOPS.</p></div>
     </div>
   </div>
 </section>
