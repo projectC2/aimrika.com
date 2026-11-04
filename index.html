@@ -45,6 +45,7 @@
       <a href="#platform">Platform</a>
       <a href="#build">What we build</a>
       <a href="#founder">Founder</a>
+      <a href="#team">Team</a>
       <a href="#contact" class="nav-cta">Contact</a>
       <a href="https://aimrika.de" class="lang-switch">DE</a>
     </nav>
@@ -142,13 +143,36 @@
   </div>
 </section>
 
-<!-- ===== WHY THIS MATTERS — REGULATORY CASE STUDY ===== -->
+<!-- ===== WHY THIS MATTERS — STANDARDS WE TEST AND VALIDATE AGAINST ===== -->
 <section id="why-it-matters">
   <div class="wrap">
-    <div class="split">
+    <div class="section-head reveal">
+      <div class="label">Why this matters · the standards we test and validate against</div>
+      <h2>Evidence that integrators and regulators can use.</h2>
+      <p>Robots, vehicles, vessels and aircraft that work near people need evidence that their AI is
+      accurate and robust on the hardware it actually runs on. The rules for that evidence are being
+      written now. Every Etalonis validation run is designed to produce it, following the relevant parts
+      of these standards. We follow them; we do not claim certification against them.</p>
+    </div>
+    <div class="table-card reveal">
+      <table>
+        <thead><tr><th>Standard</th><th>How we use it</th></tr></thead>
+        <tbody>
+          <tr><td>Machinery Regulation (EU) 2023/1230 (applies from 20 January 2027) and EN ISO 10218-2:2025</td><td>The requirements for AI-enabled machinery and collaborative robot applications. Integrators must show their AI performs; we produce that evidence.</td></tr>
+          <tr><td>ISO/IEC TR 5469</td><td>AI is not declared a safety function. Protection of persons stays with certified safety devices; our detectors supply the recall and latency evidence. Evidence, not certification.</td></tr>
+          <tr><td>AI Act Art. 15</td><td>Accuracy and robustness expectations for AI systems, measured per model and per hardware tier.</td></tr>
+          <tr><td>prEN 18281 (draft)</td><td>Computer-vision accuracy evaluation. We follow its object-detection parts now.</td></tr>
+          <tr><td>prEN 18229-4 / -5 (draft)</td><td>Accuracy and robustness of AI systems.</td></tr>
+          <tr><td>ISO/IEC TR 24029-1</td><td>Robustness assessment of neural networks.</td></tr>
+          <tr><td>ISO/IEC 5338 and ISO/IEC 5259</td><td>AI-system lifecycle and data quality, followed in their relevant parts for verification and data quality.</td></tr>
+          <tr><td>MLPerf Inference (edge) methodology</td><td>Our scoring discipline: a fixed reference model, a fixed test set and an accuracy-retention floor. Not an MLPerf submission.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="split" style="margin-top:56px">
       <div class="reveal">
-        <div class="label">Why this matters · a real example</div>
-        <h2>One licence. A thousand flights. Months, not minutes.</h2>
+        <div class="label">One example among several · aviation</div>
+        <h3>One licence. A thousand flights. Months, not minutes.</h3>
         <p style="color:var(--muted);margin-top:16px">Under EU drone regulation (2019/947), a drone
         over 25kg — or flying beyond visual line of sight, above 120m, or over people — leaves the
         lightly-regulated "Open" category and needs a full risk assessment (SORA) and, at the top end,
@@ -187,29 +211,28 @@
     <div class="section-head reveal">
       <div class="label">Proven today, not promised</div>
       <h2>The engineering foundation already exists.</h2>
-      <p>Etalonis is not a concept — it is running infrastructure, proven first on a flying-vehicle
-      platform, generalising to ground and maritime robots as the roadmap extends.</p>
+      <p>Etalonis is not a concept — it is running infrastructure: a validation ladder from simulation
+      to software-in-the-loop to hardware-in-the-loop on production edge hardware, with every run scored
+      against a reference result. Proven first on an aerial platform, the same method applies to ground,
+      maritime and industrial robots.</p>
     </div>
     <div class="stats reveal">
-      <div class="stat"><div class="n">24</div><div class="l">trained AI models across 9 architecture variants</div></div>
-      <div class="stat"><div class="n">0.933 mAP50</div><div class="l">production maritime vessel detection at 64 FPS on edge hardware</div></div>
-      <div class="stat"><div class="n">Closed-loop</div><div class="l">real-time detection-and-localization on embedded hardware, hardware-in-the-loop against live simulation</div></div>
-      <div class="stat"><div class="n">GPS-denied</div><div class="l">visual place recognition for navigation without satellite positioning</div></div>
+      <div class="stat"><div class="n">17</div><div class="l">in-house vision models — detection, classification and semantic segmentation (YOLO11 and YOLO26 at sizes n to x, plus a DeepLabV3+ segmenter)</div></div>
+      <div class="stat"><div class="n">22</div><div class="l">detectors and classifiers benchmarked — 16 of our own and 6 vendor/pretrained models</div></div>
+      <div class="stat"><div class="n">0.947 mAP50</div><div class="l">production detector — 63.7 FPS DeepStream inference and 39.9 FPS end-to-end on Jetson Orin Nano (FP16)</div></div>
+      <div class="stat"><div class="n">4 of 5</div><div class="l">validation-ladder rungs regression-locked, up to hardware-in-the-loop with real video injection</div></div>
     </div>
     <div class="table-card reveal" style="margin-top:32px">
       <table>
         <thead><tr><th>Capability</th><th>What it means in practice</th></tr></thead>
         <tbody>
-          <tr><td>Visual Place Recognition (VPR)</td><td>The agent localises itself from what it sees,
-          not from GPS — proven in environments where satellite positioning is denied, degraded or
-          spoofed.</td></tr>
-          <tr><td>Multi-agent rehearsal</td><td>Fleets of machines learn to coordinate — the
-          joint-and-safe operation real-world trials can rarely afford to test at scale.</td></tr>
-          <tr><td>Sim-to-real gap, measured</td><td>One scoring harness runs both simulation and
-          reality, so the gap between them is a measured number, not a hope.</td></tr>
-          <tr><td>Platform-agnostic</td><td>Built on a flying-vehicle platform first; the same
-          environment, methodology and edge-compute architecture generalise to ground and maritime
-          robots.</td></tr>
+          <tr><td>Host-to-device gap, measured</td><td>The same scoring runs on the training host and on
+          the edge device, so the accuracy lost between them is a measured number, not a hope.</td></tr>
+          <tr><td>Cross-stack benchmarking</td><td>Each model is compared across sizes, architecture
+          generations, devices and software stacks (TensorRT/DeepStream, ONNX Runtime). An external
+          ROS 2 / Docker autonomy stack has been benchmarked on our own Jetson hardware.</td></tr>
+          <tr><td>Platform-agnostic</td><td>Built on an aerial platform first; the same methodology and
+          edge-compute architecture apply to ground, maritime and industrial robots.</td></tr>
           <tr><td>Hardware right-sizing</td><td>We don't just validate the AI — we tell you what to run
           it on. Each workload is matched to the cheapest, lowest-power hardware tier that still clears
           its performance bar — from a Raspberry Pi 5, through the full NVIDIA Jetson family, up to
@@ -217,6 +240,9 @@
         </tbody>
       </table>
     </div>
+    <p class="reveal" style="color:var(--muted);margin-top:20px"><strong>On the roadmap, not yet
+    demonstrated:</strong> visual place recognition (localisation from what the machine sees, without
+    satellite positioning) and multi-agent rehearsal at fleet scale.</p>
     <!-- T5377: forward CTA to the standalone etalonis.com product site (live since 2026-09-23). -->
     <div class="reveal" style="text-align:center;margin-top:48px">
       <a href="https://etalonis.com" class="btn btn-primary" target="_blank" rel="noopener">Explore the full Etalonis technical site →</a>
@@ -308,7 +334,7 @@
         <ul>
           <li><strong>Simulation is the authority, not the demo.</strong> Etalonis is where autonomy is built and validated; the real world confirms it.</li>
           <li><strong>Single source of truth.</strong> Every behaviour, benchmark and decision is traceable — trust is earned by auditability.</li>
-          <li><strong>Honest by design.</strong> One harness scores both worlds, so the simulation-to-reality gap is measured, not hidden. We never ship what we have not measured.</li>
+          <li><strong>Honest by design.</strong> The same scoring runs in simulation, on the host and on the edge device, so the gaps between them are measured, not hidden. We never ship what we have not measured.</li>
         </ul>
       </div>
       <div class="etalon-viz reveal">
@@ -316,7 +342,7 @@
         <div class="row"><span>etalon · track error</span><span>1.00×</span></div>
         <div class="row"><span>agent · track error</span><span class="ok">0.94×</span></div>
         <div class="row"><span>degraded-sensor recovery</span><span class="ok">✓</span></div>
-        <div class="row"><span>sim-to-real gap</span><span>measured</span></div>
+        <div class="row"><span>host-to-device gap</span><span>measured</span></div>
         <div class="row"><span>reproducible</span><span class="ok">100 / 100</span></div>
         <div class="row"><span>verdict</span><span class="ok">validated</span></div>
       </div>
@@ -336,6 +362,29 @@
         <p>Volodymyr previously founded and led a British orbital-launch company — a deep-tech venture that designed, built and test-fired rocket engines and launch vehicles in the UK and Europe. He has spent his career turning hard engineering into fielded capability.</p>
         <p>Aimrika continues that mission on a new frontier: giving autonomous machines the proving ground they need to be trusted. The conviction is the same — real capability, built honestly, proven before it ships.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section id="team">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="label">Team</div>
+      <h2>A growing team of IT and AI specialists.</h2>
+      <p>Aimrika is building a five-person technical team around the founder. These are the roles we are building out.</p>
+    </div>
+    <div class="table-card reveal">
+      <table>
+        <thead><tr><th>Role</th><th>Focus</th></tr></thead>
+        <tbody>
+          <tr><td>Founder &amp; CEO</td><td>Technical direction and project leadership</td></tr>
+          <tr><td>AI Developer — edge-AI integration</td><td>Adopting, configuring and debugging new edge-AI hardware and toolchains</td></tr>
+          <tr><td>AI Developer — ML optimisation</td><td>Quantisation, pruning and tensor optimisation to meet performance and accuracy floors</td></tr>
+          <tr><td>AI Developer — recommendation engine</td><td>The engine that matches each AI workload to the right hardware tier</td></tr>
+          <tr><td>DevOps Engineer</td><td>Runtime routing and partitioned execution across the hardware fleet</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
